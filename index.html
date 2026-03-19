@@ -479,9 +479,21 @@
         </nav>
     </header>
 
-    <!-- Hero Section - Image Only -->
+    <!-- Hero Section - Video Background -->
     <section class="hero">
-        <img src="https://raw.githubusercontent.com/CuraMate/CuraMate/main/hero.jpg" alt="CuraMate Hero" class="hero-background">
+        <video
+            class="hero-background"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            poster="https://raw.githubusercontent.com/CuraMate/CuraMate/main/hero.jpg"
+            aria-label="CuraMate Hero Video"
+        >
+            <!-- Hero video (update src to point at your latest video) -->
+            <source src="https://raw.githubusercontent.com/CuraMate/CuraMate/main/VIDEOLOOP.mov" type="video/quicktime">
+        </video>
     </section>
 
     <!-- Hero Content Section -->
