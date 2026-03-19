@@ -488,7 +488,6 @@
             loop
             playsinline
             preload="metadata"
-            poster="https://raw.githubusercontent.com/CuraMate/CuraMate/main/hero.jpg"
             aria-label="CuraMate Hero Video"
         >
             <!-- Hero video (update src to point at your latest video) -->
@@ -613,6 +612,17 @@
     </footer>
 
     <script>
+        // Keep the hero video playing continuously (extra safety for browsers where `loop` may be unreliable).
+        document.addEventListener('DOMContentLoaded', () => {
+            const heroVideo = document.querySelector('video.hero-background');
+            if (!heroVideo) return;
+            heroVideo.addEventListener('ended', () => {
+                heroVideo.currentTime = 0;
+                heroVideo.play().catch(() => {});
+            });
+            heroVideo.play().catch(() => {});
+        });
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
